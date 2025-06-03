@@ -1,14 +1,8 @@
 version: "3.8"
-
 services:
-  yiiapp:
-    image: faixan01/yii2-app:latest
+  app:
+    build: .
     ports:
-      - "8080:80"
-    deploy:
-      replicas: 1
-      update_config:
-        parallelism: 1
-        delay: 10s
-      restart_policy:
-        condition: on-failure
+      - "9000:9000"
+    volumes:
+      - .:/var/www/html
