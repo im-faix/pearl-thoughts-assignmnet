@@ -36,4 +36,5 @@ jobs:
           script: |
             docker pull $DOCKER_IMAGE:$BUILD_ID
             docker service update --image $DOCKER_IMAGE:$BUILD_ID yii2app || \
-            docker service create --name yii2app --publish 9000:9000 $DOCKER_IMAGE:$BUILD_ID
+            docker service create --name yii2app --publish 9000:80 $DOCKER_IMAGE:$BUILD_ID
+
